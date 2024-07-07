@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
 private extension MainTabBarController {
     
     func setupTabBar() {
-        tabBar.backgroundColor = .white
+        tabBar.backgroundColor = .background
         let firstVC = getFriendMainVC()
         let secondVC = getSeconeMainVC()
         self.viewControllers = [firstVC, secondVC]
@@ -27,7 +27,7 @@ private extension MainTabBarController {
     func getFriendMainVC() -> UIViewController {
         
         let vc = FriendMainViewController()
-        vc.title = NSLocalizedString("朋友", comment: "")
+        vc.tabBarItem.title = NSLocalizedString("朋友", comment: "")
         vc.tabBarItem.image = .init(systemName: "face.smiling")
         vc.tabBarItem.selectedImage = .init(systemName: "face.smiling.fill")
         let nav = UINavigationController(rootViewController: vc)
@@ -37,11 +37,10 @@ private extension MainTabBarController {
     func getSeconeMainVC() -> UIViewController {
         
         let vc = EditMainViewController()
-        vc.title = NSLocalizedString("編輯", comment: "")
+        vc.tabBarItem.title = NSLocalizedString("編輯", comment: "")
         vc.tabBarItem.image = .init(systemName: "pencil.circle")
         vc.tabBarItem.selectedImage = .init(systemName: "pencil.circle.fill")
         let nav = UINavigationController(rootViewController: vc)
         return nav
     }
 }
-
