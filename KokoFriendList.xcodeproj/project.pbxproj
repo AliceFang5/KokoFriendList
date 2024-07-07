@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		64A944112C3A501E005812A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944102C3A501E005812A5 /* AppDelegate.swift */; };
-		64A944152C3A501E005812A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944142C3A501E005812A5 /* ViewController.swift */; };
+		64A944152C3A501E005812A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944142C3A501E005812A5 /* MainTabBarController.swift */; };
 		64A9441A2C3A5020005812A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64A944192C3A5020005812A5 /* Assets.xcassets */; };
 		64A9441D2C3A5020005812A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 64A9441C2C3A5020005812A5 /* Base */; };
 		64A944282C3A5021005812A5 /* KokoFriendListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944272C3A5021005812A5 /* KokoFriendListTests.swift */; };
 		64A944322C3A5021005812A5 /* KokoFriendListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944312C3A5021005812A5 /* KokoFriendListUITests.swift */; };
 		64A944342C3A5021005812A5 /* KokoFriendListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944332C3A5021005812A5 /* KokoFriendListUITestsLaunchTests.swift */; };
+		64A944422C3A78DF005812A5 /* FriendMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944412C3A78DF005812A5 /* FriendMainViewController.swift */; };
+		64A944472C3A7968005812A5 /* EditMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944462C3A7968005812A5 /* EditMainViewController.swift */; };
+		64A9444A2C3A7F7E005812A5 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944492C3A7F7E005812A5 /* DataProvider.swift */; };
+		64A9444D2C3A8050005812A5 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9444C2C3A8050005812A5 /* AccountInfo.swift */; };
+		64A9444F2C3A806B005812A5 /* FriendInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9444E2C3A806B005812A5 /* FriendInfo.swift */; };
+		64A944512C3A80D2005812A5 /* AccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944502C3A80D2005812A5 /* AccountInfoView.swift */; };
+		64A944532C3A80E9005812A5 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944522C3A80E9005812A5 /* EmptyView.swift */; };
+		64A944552C3A8137005812A5 /* FriendMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944542C3A8137005812A5 /* FriendMainViewModel.swift */; };
+		64A944572C3A8220005812A5 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944562C3A8220005812A5 /* FriendListViewController.swift */; };
+		64A944592C3A822A005812A5 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944582C3A822A005812A5 /* FriendListViewModel.swift */; };
+		64A9445B2C3A825F005812A5 /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9445A2C3A825F005812A5 /* FriendListTableViewCell.swift */; };
+		64A9445D2C3A8A7A005812A5 /* FriendListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9445C2C3A8A7A005812A5 /* FriendListSource.swift */; };
 		7E1769A7C1F028EABB4D6826 /* Pods_KokoFriendList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2662D62727C0FF5CDAE515 /* Pods_KokoFriendList.framework */; };
 		848B62212834136C22D0795D /* Pods_KokoFriendListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBCFFCDA8B48102936147B7 /* Pods_KokoFriendListTests.framework */; };
 		BAF6148D265AA628A70F875D /* Pods_KokoFriendList_KokoFriendListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D896449275B1D669578EB1F5 /* Pods_KokoFriendList_KokoFriendListUITests.framework */; };
@@ -42,7 +54,7 @@
 		45FF3AD5D0D96FE6F3958726 /* Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig"; path = "Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		64A9440D2C3A501E005812A5 /* KokoFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A944102C3A501E005812A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64A944142C3A501E005812A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64A944142C3A501E005812A5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		64A944192C3A5020005812A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64A9441C2C3A5020005812A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64A9441E2C3A5020005812A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +63,18 @@
 		64A9442D2C3A5021005812A5 /* KokoFriendListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KokoFriendListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A944312C3A5021005812A5 /* KokoFriendListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokoFriendListUITests.swift; sourceTree = "<group>"; };
 		64A944332C3A5021005812A5 /* KokoFriendListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokoFriendListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64A944412C3A78DF005812A5 /* FriendMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMainViewController.swift; sourceTree = "<group>"; };
+		64A944462C3A7968005812A5 /* EditMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMainViewController.swift; sourceTree = "<group>"; };
+		64A944492C3A7F7E005812A5 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		64A9444C2C3A8050005812A5 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
+		64A9444E2C3A806B005812A5 /* FriendInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfo.swift; sourceTree = "<group>"; };
+		64A944502C3A80D2005812A5 /* AccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoView.swift; sourceTree = "<group>"; };
+		64A944522C3A80E9005812A5 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		64A944542C3A8137005812A5 /* FriendMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMainViewModel.swift; sourceTree = "<group>"; };
+		64A944562C3A8220005812A5 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		64A944582C3A822A005812A5 /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
+		64A9445A2C3A825F005812A5 /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
+		64A9445C2C3A8A7A005812A5 /* FriendListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListSource.swift; sourceTree = "<group>"; };
 		73340F6DD88B5B3CF12276CE /* Pods-KokoFriendList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoFriendList.debug.xcconfig"; path = "Target Support Files/Pods-KokoFriendList/Pods-KokoFriendList.debug.xcconfig"; sourceTree = "<group>"; };
 		76F21A6DC72454C0940F7DD8 /* Pods-KokoFriendList-KokoFriendListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoFriendList-KokoFriendListUITests.release.xcconfig"; path = "Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9A2662D62727C0FF5CDAE515 /* Pods_KokoFriendList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KokoFriendList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				64A944102C3A501E005812A5 /* AppDelegate.swift */,
-				64A944142C3A501E005812A5 /* ViewController.swift */,
+				64A944142C3A501E005812A5 /* MainTabBarController.swift */,
+				64A944482C3A7F67005812A5 /* DataProvider */,
+				64A944402C3A78B1005812A5 /* FriendMainPage */,
+				64A944452C3A7943005812A5 /* EditMainPage */,
 				64A944192C3A5020005812A5 /* Assets.xcassets */,
 				64A9441B2C3A5020005812A5 /* LaunchScreen.storyboard */,
 				64A9441E2C3A5020005812A5 /* Info.plist */,
@@ -151,6 +178,63 @@
 			path = KokoFriendListUITests;
 			sourceTree = "<group>";
 		};
+		64A944402C3A78B1005812A5 /* FriendMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				64A944412C3A78DF005812A5 /* FriendMainViewController.swift */,
+				64A944542C3A8137005812A5 /* FriendMainViewModel.swift */,
+				64A944562C3A8220005812A5 /* FriendListViewController.swift */,
+				64A944582C3A822A005812A5 /* FriendListViewModel.swift */,
+				64A944432C3A78E8005812A5 /* View */,
+				64A944442C3A7902005812A5 /* Model */,
+			);
+			path = FriendMainPage;
+			sourceTree = "<group>";
+		};
+		64A944432C3A78E8005812A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64A944502C3A80D2005812A5 /* AccountInfoView.swift */,
+				64A944522C3A80E9005812A5 /* EmptyView.swift */,
+				64A9445A2C3A825F005812A5 /* FriendListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		64A944442C3A7902005812A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64A944452C3A7943005812A5 /* EditMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				64A944462C3A7968005812A5 /* EditMainViewController.swift */,
+			);
+			path = EditMainPage;
+			sourceTree = "<group>";
+		};
+		64A944482C3A7F67005812A5 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				64A9444B2C3A8041005812A5 /* Model */,
+				64A944492C3A7F7E005812A5 /* DataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		64A9444B2C3A8041005812A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64A9444C2C3A8050005812A5 /* AccountInfo.swift */,
+				64A9444E2C3A806B005812A5 /* FriendInfo.swift */,
+				64A9445C2C3A8A7A005812A5 /* FriendListSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		74934359EFC23BBA777DC449 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +256,7 @@
 				64A944092C3A501E005812A5 /* Sources */,
 				64A9440A2C3A501E005812A5 /* Frameworks */,
 				64A9440B2C3A501E005812A5 /* Resources */,
+				F26947C0A59CAAEEDC1F56E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +294,7 @@
 				64A944292C3A5021005812A5 /* Sources */,
 				64A9442A2C3A5021005812A5 /* Frameworks */,
 				64A9442B2C3A5021005812A5 /* Resources */,
+				DC21AA28FBB759ACF2D45DFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,6 +398,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC21AA28FBB759ACF2D45DFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F04B61165CF3D0C81AACAB08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +435,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F26947C0A59CAAEEDC1F56E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList/Pods-KokoFriendList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList/Pods-KokoFriendList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KokoFriendList/Pods-KokoFriendList-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA7BF1D1E6DDBB846E966510 /* [CP] Check Pods Manifest.lock */ = {
@@ -363,8 +483,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A944152C3A501E005812A5 /* ViewController.swift in Sources */,
+				64A9445D2C3A8A7A005812A5 /* FriendListSource.swift in Sources */,
+				64A944572C3A8220005812A5 /* FriendListViewController.swift in Sources */,
+				64A944152C3A501E005812A5 /* MainTabBarController.swift in Sources */,
+				64A944532C3A80E9005812A5 /* EmptyView.swift in Sources */,
+				64A944472C3A7968005812A5 /* EditMainViewController.swift in Sources */,
+				64A944552C3A8137005812A5 /* FriendMainViewModel.swift in Sources */,
+				64A9444F2C3A806B005812A5 /* FriendInfo.swift in Sources */,
+				64A9444A2C3A7F7E005812A5 /* DataProvider.swift in Sources */,
+				64A944512C3A80D2005812A5 /* AccountInfoView.swift in Sources */,
+				64A9445B2C3A825F005812A5 /* FriendListTableViewCell.swift in Sources */,
+				64A944592C3A822A005812A5 /* FriendListViewModel.swift in Sources */,
 				64A944112C3A501E005812A5 /* AppDelegate.swift in Sources */,
+				64A944422C3A78DF005812A5 /* FriendMainViewController.swift in Sources */,
+				64A9444D2C3A8050005812A5 /* AccountInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8VRLAS2GU;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KokoFriendList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -568,6 +701,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X8VRLAS2GU;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KokoFriendList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

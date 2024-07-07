@@ -6,6 +6,7 @@ target 'KokoFriendList' do
   use_frameworks!
 
   # Pods for KokoFriendList
+  pod 'SnapKit', '5.7.1'
 
   target 'KokoFriendListTests' do
     inherit! :search_paths
