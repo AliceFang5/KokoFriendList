@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol EmptyViewDelegate: AnyObject {
+    func onAddFriendButtonTapped()
+}
+
 class EmptyView: UIView {
+    
+    weak var delegate: EmptyViewDelegate?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -38,7 +44,7 @@ class EmptyView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [helpLabel, setIDLabel])
         stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.spacing = 2
         return stackView
     }()
     
@@ -53,23 +59,36 @@ class EmptyView: UIView {
     
     private let setIDLabel: UILabel = {
         let label = UILabel()
-        label.text = "設定 KOKO ID"
+        let text = "設定 KOKO ID"
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: text.count))
+        label.attributedText = attributedString
         label.textColor = .hotPink
         label.font = UIFont.pingFangTC(size: 13)
         return label
     }()
     
-    private let addFriendButton: UIButton = {
-        let button = UIButton()
+    private lazy var addFriendButton: GradientButton = {
+        let button = GradientButton(_gradientLayer: Constant.buttonGradientLayer)
         button.setTitle("加好友", for: .normal)
-        button.backgroundColor = .green
+        button.setTitleColor(.whiteThree, for: .normal)
+        button.titleLabel?.font = UIFont.pingFangTC(size: 16, type: .medium)
+        button.addTarget(self, action: #selector(onAddFriendButtonTapped), for: .touchUpInside)
         button.layer.cornerRadius = 20
-        // gradientButton
+        button.layer.shadowColor = UIColor.appleGreen40.cgColor
+        button.layer.shadowOpacity = 1
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowRadius = 8
+        
+        var config = UIButton.Configuration.plain()
+        config.image = UIImage(named: "icAddFriendWhite")
+        config.imagePlacement = .trailing    
+        button.configuration = config
         return button
     }()
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
     }
     
@@ -80,7 +99,12 @@ class EmptyView: UIView {
 
 private extension EmptyView {
     
+    @objc func onAddFriendButtonTapped() {
+        delegate?.onAddFriendButtonTapped()
+    }
+    
     func setupUI() {
+        backgroundColor = .whiteThree
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(descriptionLabel)

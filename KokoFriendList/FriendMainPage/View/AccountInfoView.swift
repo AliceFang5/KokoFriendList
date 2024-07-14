@@ -31,18 +31,18 @@ class AccountInfoView: UIView {
         return imageView
     }()
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func updateAccountInfo(_ accountInfo: AccountInfo) {
         nameLabel.text = accountInfo.name
         idLabel.text = "KOKO ID：\(accountInfo.kokoid) >"
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

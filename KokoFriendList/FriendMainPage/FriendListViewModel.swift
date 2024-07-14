@@ -9,5 +9,18 @@ import Foundation
 
 class FriendListViewModel {
     
+    private var friendList: [FriendInfo] = []
     
+    func updateFriendList(list: [FriendInfo]) {
+        friendList = list
+    }
+    
+    func getFriendListCount() -> Int {
+        return friendList.count
+    }
+    
+    func getFriendInfo(index: Int) -> FriendInfo? {
+        guard friendList.indices.contains(index) else { return nil }
+        return friendList[index]
+    }
 }

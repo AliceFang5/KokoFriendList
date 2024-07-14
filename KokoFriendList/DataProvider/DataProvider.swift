@@ -21,7 +21,7 @@ class DataProvider {
     
     lazy var accountInfo: AccountInfo? = nil
     lazy var friendList: [FriendInfo] = []
-    private lazy var friendListSource: FriendListSource = .list1
+    private lazy var friendListSource: FriendListSource = .listWithInvite
     
     func fetchAccountData() {
         let urlString = "https://dimanyen.github.io/man.json"
