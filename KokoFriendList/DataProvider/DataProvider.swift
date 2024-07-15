@@ -19,9 +19,9 @@ class DataProvider {
     
     weak var delegate: DataProviderDelegate?
     
-    lazy var accountInfo: AccountInfo? = nil
-    lazy var friendList: [FriendInfo] = []
-    private lazy var friendListSource: FriendListSource = .listWithInvite
+    private lazy var friendInfoDic: [String: FriendInfo] = [:]
+    private lazy var friendFidList: [String] = []
+    private lazy var friendListSourceList: [FriendListSource] = [.list1, .list2]
     
     func fetchAccountData() {
         let urlString = "https://dimanyen.github.io/man.json"
@@ -29,7 +29,6 @@ class DataProvider {
             let task = URLSession.shared.dataTask(with: url) { (data, request, err) in
                 if let data = data, let result = try? JSONDecoder().decode(AccountResult.self, from: data){
                     if let accountInfo = result.response.first {
-                        self.accountInfo = accountInfo
                         self.delegate?.didReceiveAccountInfo(accountInfo)
                     }
                 }
@@ -39,19 +38,71 @@ class DataProvider {
     }
     
     func fetchFriendListData() {
-        let urlString = friendListSource.urlString
-        if let url = URL(string: urlString){
-            let task = URLSession.shared.dataTask(with: url) { (data, request, err) in
-                if let data = data, let result = try? JSONDecoder().decode(FriendListResult.self, from: data){
-                    self.friendList = result.response
-                    self.delegate?.didReceiveFriendList(self.friendList)
+        
+        let group = DispatchGroup()
+        friendListSourceList.forEach { friendListSource in
+            group.enter()
+            let urlString = friendListSource.urlString
+            if let url = URL(string: urlString){
+                let task = URLSession.shared.dataTask(with: url) { (data, request, err) in
+                    if let data = data, let result = try? JSONDecoder().decode(FriendListResult.self, from: data){
+                        self.updateFriendList(result.response)
+                        group.leave()
+                    }
                 }
+                task.resume()
             }
-            task.resume()
+        }
+        
+        group.notify(queue: .main) {
+            let friendList = self.friendFidList.compactMap { fid in
+                return self.friendInfoDic[fid]
+            }
+            self.delegate?.didReceiveFriendList(friendList)
         }
     }
     
-    func updateFriendListSource(_ newSource: FriendListSource) {
-        friendListSource = newSource
+    func updateFriendList(_ newList: [FriendInfo]) {
+        newList.forEach { newItem in
+            
+            guard let oldItem = friendInfoDic[newItem.fid] else {
+                // fid無資料，加入新資料
+                friendInfoDic[newItem.fid] = newItem
+                friendFidList.append(newItem.fid)
+                return
+            }
+            
+            // fid有資料，比較updateDate，更新資料
+            guard let oldDate = oldItem.updateDate.toDate("yyyyMMdd") else { return }
+            
+            // 新資料的日期格式為yyyyMMdd，可直接比較
+            if let newDate = newItem.updateDate.toDate("yyyyMMdd") {
+                
+                let newInfo = oldDate > newDate ? oldItem : newItem
+                friendInfoDic[newItem.fid] = newInfo
+                return
+            }
+            
+            // 新資料的日期格式為yyyy/MM/dd，統一格式為yyyyMMdd
+            if let newDate = newItem.updateDate.toDate("yyyy/MM/dd") {
+                
+                var newInfo = oldItem
+                if oldDate < newDate {
+                    newInfo = newItem
+                    let dateFormatter = String.dateFormatter
+                    dateFormatter.dateFormat = "yyyyMMdd"
+                    newInfo.updateDate = dateFormatter.string(from: newDate)
+                }
+                friendInfoDic[newItem.fid] = newInfo
+                return
+            }
+            
+            // 新資料的日期格式錯誤，不動作
+            return
+        }
+    }
+    
+    func updateFriendListSourceList(_ newSourceList: [FriendListSource]) {
+        friendListSourceList = newSourceList
     }
 }

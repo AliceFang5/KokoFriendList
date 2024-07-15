@@ -83,8 +83,8 @@ class FriendListTableViewCell: UITableViewCell {
         nameLabel.text = info.name
         
         let isDuringInvite = info.status == 2
-        duringInviteButton.isHidden = isDuringInvite
-        moreButton.isHidden = !isDuringInvite
+        duringInviteButton.isHidden = !isDuringInvite
+        moreButton.isHidden = isDuringInvite
     }
 }
 

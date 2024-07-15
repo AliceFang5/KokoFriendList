@@ -52,7 +52,7 @@ class FriendMainViewController: UIViewController {
     private lazy var menuButtonList = [friendListButton, chatListButton]
     private let friendListButton = MenuButton(title: "好友")
     private let chatListButton = MenuButton(title: "聊天")
-    private lazy var currentMenuButton: MenuButton? = nil
+    private lazy var currentIndex: Int = 0
     private lazy var grayLineView: UIView = {
         let view = UIView()
         view.backgroundColor = .background
@@ -136,23 +136,30 @@ private extension FriendMainViewController {
     }
 
     func setDefaultPage() {
-        friendListButton.isSelect(true)
-        currentMenuButton = friendListButton
-        friendListButton.updateNotifyCount(2)
-        chatListButton.updateNotifyCount(100)
+        setPageVC(index: currentIndex)
+        chatListButton.updateNotifyCount(100) //demo
+    }
+    
+    func setPageVC(index: Int) {
+        guard menuButtonList.indices.contains(index) else { return }
+        menuButtonList[currentIndex].isSelect(false)
+        menuButtonList[index].isSelect(true)
         
-        pageVC.setViewControllers([friendListVC],
-                                  direction: .forward,
-                                  animated: false,
+        var direction: UIPageViewController.NavigationDirection = .forward
+        if index < currentIndex {
+            direction = .reverse
+        }
+        let vc = viewControllers[index]
+        pageVC.setViewControllers([vc],
+                                  direction: direction,
+                                  animated: true,
                                   completion: nil)
+        currentIndex = index
     }
     
     @objc func onMenuButtonTapped(sender: MenuButton) {
         guard let index = menuButtonList.firstIndex(of: sender) else { return }
-        
-        currentMenuButton?.isSelect(false)
-        menuButtonList[index].isSelect(true)
-        currentMenuButton = menuButtonList[index]
+        setPageVC(index: index)
     }
 }
 
@@ -166,10 +173,39 @@ extension FriendMainViewController: FriendMainViewModelDelegate {
     
     func didReceiveFriendList(_ list: [FriendInfo]) {
         DispatchQueue.main.async {
-            self.friendListVC.updateFriendList(list: list)
-            let inviteList = list.filter { $0.status == 2 }
+            
+            // status == 0, 表示為邀請送出，需要更新好友邀請欄位，不需要顯示在好友列表
+            let inviteList = list.filter { $0.status == 0 }
             self.inviteListView.updateInfoList(infoList: inviteList)
             self.inviteListView.isHidden = inviteList.isEmpty
+            
+            let friendList = list.filter { $0.status != 0 }
+            self.friendListVC.updateFriendList(list: friendList)
+            
+            // status == 2, 表示為邀請中，需要更新好友頁籤右上角count
+            let isDuringInviteListCount = list.filter { $0.status == 2 }.count
+            self.friendListButton.updateNotifyCount(isDuringInviteListCount)
         }
+    }
+}
+
+extension FriendMainViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = viewControllers.firstIndex(of: viewController) else { return nil }
+        let preIndex = index - 1
+        guard viewControllers.indices.contains(preIndex) else {
+            return nil
+        }
+        return viewControllers[preIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let index = viewControllers.firstIndex(of: viewController) else { return nil }
+        let nextIndex = index + 1
+        guard viewControllers.indices.contains(nextIndex) else {
+            return nil
+        }
+        return viewControllers[nextIndex]
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		649E98012C4024D700BC3572 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E98002C4024D700BC3572 /* MenuButton.swift */; };
 		649E98032C4029DB00BC3572 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E98022C4029DB00BC3572 /* SearchView.swift */; };
+		649F85FB2C44DAFB009B0FD1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649F85FA2C44DAFB009B0FD1 /* StringExtension.swift */; };
 		64A56A4D2C44266500CB2883 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A56A4C2C44266500CB2883 /* GradientButton.swift */; };
 		64A56A4F2C4428E700CB2883 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A56A4E2C4428E700CB2883 /* Constant.swift */; };
 		64A944112C3A501E005812A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944102C3A501E005812A5 /* AppDelegate.swift */; };
@@ -62,6 +63,7 @@
 		45FF3AD5D0D96FE6F3958726 /* Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig"; path = "Target Support Files/Pods-KokoFriendList-KokoFriendListUITests/Pods-KokoFriendList-KokoFriendListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		649E98002C4024D700BC3572 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		649E98022C4029DB00BC3572 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		649F85FA2C44DAFB009B0FD1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		64A56A4C2C44266500CB2883 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		64A56A4E2C4428E700CB2883 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		64A9440D2C3A501E005812A5 /* KokoFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 			children = (
 				64A9445F2C3AD835005812A5 /* UIFontExtension.swift */,
 				64A944612C3AD860005812A5 /* UIColorExtension.swift */,
+				649F85FA2C44DAFB009B0FD1 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				64A944112C3A501E005812A5 /* AppDelegate.swift in Sources */,
 				64A56A4F2C4428E700CB2883 /* Constant.swift in Sources */,
 				64A944422C3A78DF005812A5 /* FriendMainViewController.swift in Sources */,
+				649F85FB2C44DAFB009B0FD1 /* StringExtension.swift in Sources */,
 				64A9444D2C3A8050005812A5 /* AccountInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
