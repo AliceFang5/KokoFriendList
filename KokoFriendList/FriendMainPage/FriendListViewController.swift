@@ -112,7 +112,8 @@ extension FriendListViewController: SearchViewDelegate {
     }
     
     func searchTextDidChange(_ searchText: String) {
-        
+        viewModel.updateSearchText(searchText)
+        tableView.reloadData()
     }
 }
 

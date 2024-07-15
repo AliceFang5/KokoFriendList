@@ -136,6 +136,7 @@ private extension FriendMainViewController {
     }
 
     func setDefaultPage() {
+        inviteListView.isHidden = true
         setPageVC(index: currentIndex)
         chatListButton.updateNotifyCount(100) //demo
     }
