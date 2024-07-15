@@ -10,6 +10,8 @@
 		649E98012C4024D700BC3572 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E98002C4024D700BC3572 /* MenuButton.swift */; };
 		649E98032C4029DB00BC3572 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649E98022C4029DB00BC3572 /* SearchView.swift */; };
 		649F85FB2C44DAFB009B0FD1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649F85FA2C44DAFB009B0FD1 /* StringExtension.swift */; };
+		649F85FD2C44FA77009B0FD1 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649F85FC2C44FA77009B0FD1 /* LandingViewController.swift */; };
+		649F85FF2C4505EF009B0FD1 /* DemoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649F85FE2C4505EF009B0FD1 /* DemoButton.swift */; };
 		64A56A4D2C44266500CB2883 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A56A4C2C44266500CB2883 /* GradientButton.swift */; };
 		64A56A4F2C4428E700CB2883 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A56A4E2C4428E700CB2883 /* Constant.swift */; };
 		64A944112C3A501E005812A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A944102C3A501E005812A5 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		649E98002C4024D700BC3572 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		649E98022C4029DB00BC3572 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		649F85FA2C44DAFB009B0FD1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		649F85FC2C44FA77009B0FD1 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		649F85FE2C4505EF009B0FD1 /* DemoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoButton.swift; sourceTree = "<group>"; };
 		64A56A4C2C44266500CB2883 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		64A56A4E2C4428E700CB2883 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		64A9440D2C3A501E005812A5 /* KokoFriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KokoFriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				64A944102C3A501E005812A5 /* AppDelegate.swift */,
+				649F85FC2C44FA77009B0FD1 /* LandingViewController.swift */,
 				64A944142C3A501E005812A5 /* MainTabBarController.swift */,
 				64A944482C3A7F67005812A5 /* DataProvider */,
 				64A944402C3A78B1005812A5 /* FriendMainPage */,
@@ -220,6 +225,7 @@
 				649E98022C4029DB00BC3572 /* SearchView.swift */,
 				64A944522C3A80E9005812A5 /* EmptyView.swift */,
 				649E98002C4024D700BC3572 /* MenuButton.swift */,
+				649F85FE2C4505EF009B0FD1 /* DemoButton.swift */,
 				64A56A4C2C44266500CB2883 /* GradientButton.swift */,
 			);
 			path = View;
@@ -520,6 +526,7 @@
 			files = (
 				649E98032C4029DB00BC3572 /* SearchView.swift in Sources */,
 				64A9445D2C3A8A7A005812A5 /* FriendListSource.swift in Sources */,
+				649F85FF2C4505EF009B0FD1 /* DemoButton.swift in Sources */,
 				64AC65EB2C3B9C0100E5CADB /* InviteInfoView.swift in Sources */,
 				64A944602C3AD835005812A5 /* UIFontExtension.swift in Sources */,
 				64A944572C3A8220005812A5 /* FriendListViewController.swift in Sources */,
@@ -528,6 +535,7 @@
 				64A56A4D2C44266500CB2883 /* GradientButton.swift in Sources */,
 				64A944472C3A7968005812A5 /* EditMainViewController.swift in Sources */,
 				64A944552C3A8137005812A5 /* FriendMainViewModel.swift in Sources */,
+				649F85FD2C44FA77009B0FD1 /* LandingViewController.swift in Sources */,
 				64A9444F2C3A806B005812A5 /* FriendInfo.swift in Sources */,
 				64A9444A2C3A7F7E005812A5 /* DataProvider.swift in Sources */,
 				64A944512C3A80D2005812A5 /* AccountInfoView.swift in Sources */,

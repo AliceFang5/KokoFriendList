@@ -21,7 +21,7 @@ class DataProvider {
     
     private lazy var friendInfoDic: [String: FriendInfo] = [:]
     private lazy var friendFidList: [String] = []
-    private lazy var friendListSourceList: [FriendListSource] = [.list1, .list2]
+    private lazy var demoType: DemoType = .listNoData
     
     func fetchAccountData() {
         let urlString = "https://dimanyen.github.io/man.json"
@@ -40,6 +40,7 @@ class DataProvider {
     func fetchFriendListData() {
         
         let group = DispatchGroup()
+        let friendListSourceList = demoType.getFriendListSource()
         friendListSourceList.forEach { friendListSource in
             group.enter()
             let urlString = friendListSource.urlString
@@ -102,7 +103,7 @@ class DataProvider {
         }
     }
     
-    func updateFriendListSourceList(_ newSourceList: [FriendListSource]) {
-        friendListSourceList = newSourceList
+    func updateDemoType(_ type: DemoType) {
+        demoType = type
     }
 }

@@ -100,9 +100,9 @@ extension FriendListViewController: UITableViewDelegate {
 extension FriendListViewController: SearchViewDelegate {
     
     func didTapSearchButton() {
-        searchView.snp.updateConstraints { make in
-            make.top.equalToSuperview().offset(100)
-        }
+//        searchView.snp.updateConstraints { make in
+//            make.top.equalToSuperview().offset(100)
+//        }
     }
     
     func endSearching() {
